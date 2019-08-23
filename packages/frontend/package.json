@@ -1,0 +1,14 @@
+{
+  "name": "@cloud-casting/frontend",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "BadCoder1337 <anton.tiz.musin@gmail.com>",
+  "license": "MIT",
+  "main": "build/index.js",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

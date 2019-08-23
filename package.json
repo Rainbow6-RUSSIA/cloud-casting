@@ -1,0 +1,17 @@
+{
+  "name": "cloud-casting",
+  "version": "1.0.0",
+  "description": "Distributed online game casting",
+  "main": "build/index.js",
+  "repository": "https://github.com/Rainbow6-RUSSIA",
+  "author": "BadCoder1337",
+  "license": "MIT",
+  "dependencies": {
+    "lerna": "^3.16.4",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "tslint": "^5.19.0"
+  }
+}
