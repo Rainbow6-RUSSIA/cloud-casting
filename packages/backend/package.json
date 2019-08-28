@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "start": "echo \"Start\"",
-    "postinstall": "sh ffmpeg-build.sh"
+    "postinstall": "sh ./build-scripts/ffmpeg-build.sh"
   },
   "dependencies": {
     "ffmpeg": "^0.0.4",
