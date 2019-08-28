@@ -10,6 +10,13 @@
     "lerna": "^3.16.4",
     "typescript": "^3.5.3"
   },
+  "scripts": {
+    "bootstrap": "lerna bootstrap --scope=@cloud-casting/$PACKAGE_NAME --include-filtered-dependencies",
+    "build": "lerna run build --scope=@cloud-casting/$PACKAGE_NAME --include-filtered-dependencies",
+    "postinstall": "yarn bootstrap && yarn build",
+    "start": "lerna run --scope=@cloud-casting/$PACKAGE_NAME start",
+    "front-publish": "cp -r -f ./packages/$PACKAGE_NAME/build ./front-publish"
+  },
   "devDependencies": {
     "@types/node": "^12.7.2",
     "tslint": "^5.19.0"
