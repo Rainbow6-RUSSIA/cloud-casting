@@ -20,5 +20,9 @@
   "devDependencies": {
     "@types/node": "^12.7.2",
     "tslint": "^5.19.0"
+  },
+  "engines": {
+    "node": ">=10.16.x",
+    "yarn": ">=1.17.x"
   }
 }
