@@ -2,8 +2,8 @@ cd $HOME
 
 git clone https://github.com/FFmpeg/FFmpeg -b release/4.1 ./ffmpeg_sources
 
-sh `dirname $0`/nasm.sh
-sh `dirname $0`/yasm.sh
+# sh `dirname $0`/nasm.sh
+# sh `dirname $0`/yasm.sh
 sh `dirname $0`/libopus.sh
 sh `dirname $0`/libvpx.sh
 
@@ -30,7 +30,8 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
   --enable-libndi_newtek \
   --enable-gpl \
   --enable-nonfree \
-  --enable-shared --disable-static
+  --enable-shared --disable-static \
+  --disable-x86asm
 PATH="$HOME/bin:$PATH" make -j $(nproc)
 make install -j $(nproc)
 hash -r
