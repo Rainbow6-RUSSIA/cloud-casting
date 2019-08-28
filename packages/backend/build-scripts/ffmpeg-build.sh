@@ -1,13 +1,13 @@
 cd $HOME
 
-git clone git@github.com:FFmpeg/FFmpeg.git -b release/4.1 ./ffmpeg_sources
+git clone https://github.com/FFmpeg/FFmpeg.git -b release/4.1 ./ffmpeg_sources
 
 # sh `dirname $0`/nasm.sh
 # sh `dirname $0`/yasm.sh
 sh `dirname $0`/libopus.sh
 sh `dirname $0`/libvpx.sh
 
-wget -c --output-document=ndi-sdk-installer.tar.gz http://new.tk/NDISDKLINUX
+wget -q -c --output-document=ndi-sdk-installer.tar.gz http://new.tk/NDISDKLINUX
 tar zxvf ./ndi-sdk-installer.tar.gz
 export PAGER=echo
 export NDISDKDIR="ndi-sdk"
