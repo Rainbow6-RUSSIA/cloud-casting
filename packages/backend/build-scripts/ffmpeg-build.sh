@@ -4,10 +4,20 @@ wget -q -c --output-document=ffmpeg_sources.zip https://codeload.github.com/FFmp
 unzip ./ffmpeg_sources.zip
 # git clone https://github.com/FFmpeg/FFmpeg.git -b release/4.1 ./ffmpeg_sources
 
-# sh `dirname $0`/nasm.sh
-# sh `dirname $0`/yasm.sh
-sh `dirname $0`/libopus.sh
-sh `dirname $0`/libvpx.sh
+cd $HOME/ffmpeg_sources && \
+git -C opus pull 2> /dev/null || git clone --depth 1 https://github.com/xiph/opus.git && \
+cd opus && \
+./autogen.sh && \
+./configure --prefix="$HOME/ffmpeg_build" --disable-shared && \
+make && \
+make install
+
+cd $HOME/ffmpeg_sources && \
+git -C libvpx pull 2> /dev/null || git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git && \
+cd libvpx && \
+PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm && \
+PATH="$HOME/bin:$PATH" make && \
+make install
 
 wget -q -c --output-document=ndi-sdk-installer.tar.gz http://new.tk/NDISDKLINUX
 tar zxvf ./ndi-sdk-installer.tar.gz
@@ -18,7 +28,7 @@ mv "NDI SDK for Linux" $NDISDKDIR
 echo "Ready to build FFMPEG"
 mkdir ./ffmpeg_build
 mkdir ./bin
-cd ./ffmpeg_sources && \
+cd $HOME/ffmpeg_sources && \
 PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
   --prefix="$HOME/ffmpeg_build" \
   --pkg-config-flags="--static" \
