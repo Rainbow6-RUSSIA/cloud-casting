@@ -1,5 +1,8 @@
-sudo apt-get update 
-sudo apt-get -y install autoconf automake build-essential cmake git libtool pkg-config texinfo wget nasm yasm libx264-dev libvpx-dev libopus-dev
+# sudo apt-get update 
+apt-get update
+# sudo apt-get -y install \
+apt-get -y install \
+autoconf automake build-essential cmake git libtool pkg-config texinfo wget nasm yasm libx264-dev libvpx-dev libopus-dev
 
 cd $HOME
 git clone https://github.com/FFmpeg/FFmpeg -b release/4.1 ./ffmpeg_sources
@@ -35,6 +38,10 @@ PATH="$HOME/bin:$PATH" make -j $(nproc)
 make install -j $(nproc)
 hash -r
 
-sudo bash -c "echo \"$HOME/ffmpeg_build/lib
+# sudo bash -c "echo \"$HOME/ffmpeg_build/lib
+# $HOME/$NDISDKDIR/lib/x86_64-linux-gnu\" > /etc/ld.so.conf.d/ffmpeg.conf"
+# sudo ldconfig
+
+bash -c "echo \"$HOME/ffmpeg_build/lib
 $HOME/$NDISDKDIR/lib/x86_64-linux-gnu\" > /etc/ld.so.conf.d/ffmpeg.conf"
-sudo ldconfig
+ldconfig
