@@ -1,6 +1,6 @@
 cd $HOME
 
-git clone https://github.com/FFmpeg/FFmpeg -b release/4.1 ./ffmpeg_sources
+git clone git@github.com:FFmpeg/FFmpeg -b release/4.1 ./ffmpeg_sources
 
 # sh `dirname $0`/nasm.sh
 # sh `dirname $0`/yasm.sh
