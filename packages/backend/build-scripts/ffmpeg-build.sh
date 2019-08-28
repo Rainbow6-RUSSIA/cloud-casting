@@ -2,7 +2,7 @@ cd $HOME
 
 wget -q -c --output-document=ffmpeg_sources.zip https://codeload.github.com/FFmpeg/FFmpeg/zip/release/4.1
 unzip ./ffmpeg_sources.zip
-git clone https://github.com/FFmpeg/FFmpeg.git -b release/4.1 ./ffmpeg_sources
+# git clone https://github.com/FFmpeg/FFmpeg.git -b release/4.1 ./ffmpeg_sources
 
 # sh `dirname $0`/nasm.sh
 # sh `dirname $0`/yasm.sh
