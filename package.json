@@ -8,7 +8,8 @@
   "license": "GPL-3.0",
   "dependencies": {
     "lerna": "^3.16.4",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "yarn": "^1.17.3"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --scope=@cloud-casting/$PACKAGE_NAME --include-filtered-dependencies",
