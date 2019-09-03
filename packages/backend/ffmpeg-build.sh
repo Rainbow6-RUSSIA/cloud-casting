@@ -1,3 +1,8 @@
+if test -f "$HOME/bin/ffmpeg"; then
+  echo "FFmpeg already built"
+  exit 0
+fi
+
 apt-get update
 apt-get -y install texinfo nasm yasm libx264-dev libvpx-dev libopus-dev
 

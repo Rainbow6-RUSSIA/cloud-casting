@@ -10,8 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "start": "echo \"Start\"",
-    "postinstall": "sh ./build-scripts/ffmpeg-build.sh"
+    "start": "echo \"Start\""
   },
   "dependencies": {
     "ffmpeg": "^0.0.4",

@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY . /app
 
-# RUN if [ "$PACKAGE_NAME" == "backend" ]; \
-RUN sh packages/backend/build-scripts/ffmpeg-build.sh
-# ; \
-#     fi
+ARG package_name=frontend
+ENV PACKAGE_NAME=$package_name
+
+RUN if [ "$PACKAGE_NAME" = "backend" ]; then sh ./packages/backend/ffmpeg-build.sh; fi
 
 RUN yarn install
 
